@@ -2,7 +2,8 @@
 		
 		
 		
-		// Проверка равенства двух чисел
+		// Check two numbers for equality (=)
+		// Проверка двух чисел на равенство (=)
 		
 bool isEqual(unsigned long x, unsigned long y) {
 	if (x ^ y) {
@@ -13,7 +14,8 @@ bool isEqual(unsigned long x, unsigned long y) {
 }
 
 
-		// Проверка двух чисел на неравенство
+		// Check two numbers for inequality (!=)
+		// Проверка двух чисел на неравенство (!=)
 		
 bool isNotEqual(unsigned long x, unsigned long y) {
 	if (x ^ y) {
@@ -24,7 +26,8 @@ bool isNotEqual(unsigned long x, unsigned long y) {
 }
 
 
-		// Проверка того, больше ли первое число второго
+		// Check whether the first number is greater than the second (>)
+		// Проверка того, больше ли первое число второго (>)
 		
 bool isGreater(unsigned long x, unsigned long y) {
 	unsigned long mask = 1ul << 63;
@@ -46,7 +49,8 @@ bool isGreater(unsigned long x, unsigned long y) {
 }
 
 
-		// Проверка того, меньше ли первое число второго
+		// Check whether the first number is less than the second (<)
+		// Проверка того, меньше ли первое число второго (<)
 		
 bool isLess(unsigned long x, unsigned long y) {
 	unsigned long mask = 1ul << 63;
@@ -68,7 +72,8 @@ bool isLess(unsigned long x, unsigned long y) {
 }
 
 
-		// Проверка на больше либо равно
+		// Check for greater or equal (>=)
+		// Проверка на больше либо равно (>=)
 		
 bool isGreaterOrEqual(unsigned long x, unsigned long y) {
 	unsigned long mask = 1ul << 63;
@@ -90,7 +95,8 @@ bool isGreaterOrEqual(unsigned long x, unsigned long y) {
 }
 
 
-		// Проверка на меньше либо равно
+		// Check for less or equal (<=)
+		// Проверка на меньше либо равно (<=)
 		
 bool isLessOrEqual(unsigned long x, unsigned long y) {
 	unsigned long mask = 1ul << 63;
@@ -114,7 +120,8 @@ bool isLessOrEqual(unsigned long x, unsigned long y) {
 
 
 
-		// Сложение двух положительных чисел
+		// Addition of two positive numbers (+)
+		// Сложение двух положительных чисел (+)
 		
 unsigned long sum(unsigned long x, unsigned long y) {
 	while (y) {
@@ -128,7 +135,8 @@ unsigned long sum(unsigned long x, unsigned long y) {
 }
 
 
-		// Вычитание двух положительных чисел. Первое больше либо равно второму.
+		// Subtraction of two positive numbers. The first is greater or equal then the second (-)
+		// Вычитание двух положительных чисел. Первое больше либо равно второму (-)
 		
 unsigned long subtract(unsigned long x, unsigned long y) {
 	while (y) {
@@ -142,7 +150,8 @@ unsigned long subtract(unsigned long x, unsigned long y) {
 }
 
 
-		// Умножение двух положительных чисел
+		// Multiplication of two positive numbers (*)
+		// Перемножение двух положительных чисел (*)
 		
 unsigned long multiply(unsigned long x, unsigned long y) {
 	unsigned long result = 0ul;
@@ -161,6 +170,7 @@ unsigned long multiply(unsigned long x, unsigned long y) {
 }		
 
 
+		// Exponentiation
 		// Возведение в степень
 		
 unsigned long pow(unsigned long x, unsigned long y) {
@@ -180,6 +190,7 @@ unsigned long pow(unsigned long x, unsigned long y) {
 }
 
 
+		// Factorial
 		// Факториал
 
 unsigned long factorial(unsigned long x) {
@@ -191,6 +202,7 @@ unsigned long factorial(unsigned long x) {
 }
 
 
+		// Shift all the bits of the number to the beginning of the bit record to the left. The number may be zero.
 		// Смещение всех битов числа в начало битовой записи влево. Число может быть равно нулю.
 		
 unsigned long shiftBitsToLeft(unsigned long number) {
@@ -202,6 +214,7 @@ unsigned long shiftBitsToLeft(unsigned long number) {
 }
 
 
+		// Get on the right a sequence of units of the same length as the length of the number. The number may be zero.
 		// Получение справа последовательности единиц той же длины, что и длина числа. Число может быть равно нулю.
 
 unsigned long getLengthOfNumber(unsigned long number) {
@@ -217,6 +230,7 @@ unsigned long getLengthOfNumber(unsigned long number) {
 }
 
 
+		// Get the new dividend from the old and its addition. Addition is shifted to the left to the beginning of the bit record.
 		// Получение нового делимого из старого и его дополнения. Дополнение смещено влево в начало битовой записи.
 
 unsigned long addBitToDividend(unsigned long dividend, unsigned long addition) {
@@ -231,7 +245,8 @@ unsigned long addBitToDividend(unsigned long dividend, unsigned long addition) {
 }
 
 
-		// Деление
+		// Division (/)
+		// Деление (/)
 		
 unsigned long divide(unsigned long dividend, unsigned long divider) {
 	if (!divider) {
@@ -259,7 +274,8 @@ unsigned long divide(unsigned long dividend, unsigned long divider) {
 }
 
 
-		// Остаток от деления
+		// Modulo (%)
+		// Остаток от деления (%)
 		
 unsigned long remainder(unsigned long dividend, unsigned long divider) {
 	unsigned long x = divide(dividend, divider);
@@ -269,14 +285,16 @@ unsigned long remainder(unsigned long dividend, unsigned long divider) {
 }
 
 
-		// Инкремент
+		// Increment (++)
+		// Инкремент (++)
 		
 unsigned long increment(unsigned long x) {
 	return sum(x, 1ul);
 }
 
 
-		// Декремент
+		// Decrement (--)
+		// Декремент (--)
 
 unsigned long decrement(unsigned long x) {
 	return subtract(x, 1ul);	
@@ -285,7 +303,8 @@ unsigned long decrement(unsigned long x) {
 
 
 
-		// XOR
+		// Bitwise EXCLUSIVE OR. XOR (^)
+		// Битовое ИСКЛЮЧАЮЩЕЕ ИЛИ. XOR (^)
 		
 unsigned long ExclusiveOR(unsigned long x, unsigned long y) {
 	return (x | y) & ~(x & y);
@@ -294,7 +313,8 @@ unsigned long ExclusiveOR(unsigned long x, unsigned long y) {
 
 
 
-		// Логическое "И"
+		// Logical AND (&&)
+		// Логическое И (&&)
 		
 bool logicalAND(bool x, bool y) {
 	if (x & ~0ul) {
@@ -307,7 +327,8 @@ bool logicalAND(bool x, bool y) {
 }
 
 
-		// Логическое "ИЛИ"
+		// Logical OR (||)
+		// Логическое ИЛИ (||)
 		
 bool logicalOR(bool x, bool y) {
 	if (x | 0ul) {
@@ -322,7 +343,8 @@ bool logicalOR(bool x, bool y) {
 }
 
 
-		// Логическое "Не"
+		// Logical NOT (!)
+		// Логическое НЕ (!)
 
 bool logicalNOT(bool x) {
 	if (x) {
@@ -333,7 +355,8 @@ bool logicalNOT(bool x) {
 }
 
 
-		// Логическое "XOR"
+		// Logical EXCLUSIVE OR. XOR
+		// Логическое ИСКЛЮЧАЮЩЕЕ ИЛИ. XOR
 		
 bool logicalXOR(bool x, bool y) {
 	bool a = logicalOR(x, y);	
