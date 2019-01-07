@@ -150,6 +150,17 @@ unsigned long subtract(unsigned long x, unsigned long y) {
 }
 
 
+		// Subtraction of two positive numbers using a two’s complement for a negative number. The first is greater or equal then the second (-)
+		// Вычитание двух положительных чисел с использованием дополнительного кода для отрицательного числа. Первое больше либо равно второму (-)
+		
+unsigned long subtract_1(unsigned long x, unsigned long y) {
+	unsigned long onesComplement = ~y;
+	unsigned long twosComplement = sum(onesComplement, 1ul);
+	
+	return sum(x, twosComplement);	
+}
+
+
 		// Multiplication of two positive numbers (*)
 		// Перемножение двух положительных чисел (*)
 		
