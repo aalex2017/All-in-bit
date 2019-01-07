@@ -318,7 +318,7 @@ unsigned long decrement(unsigned long x) {
 		// Битовое ИСКЛЮЧАЮЩЕЕ ИЛИ. XOR (^)
 		
 unsigned long ExclusiveOR(unsigned long x, unsigned long y) {
-	return (x | y) & ~(x & y);
+	return (x | y) & ~(x & y);	// (~x & y) | (x & ~y);
 }
 
 
